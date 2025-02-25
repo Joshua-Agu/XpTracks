@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:id="@+id/transactionlayout"
+    android:focusable="true"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:background="?selectableItemBackground"
+    android:clickable="true">
+
+    <TextView
+        android:textStyle="bold"
+        android:id="@+id/label"
+        android:layout_width="141dp"
+        android:fontFamily="sans-serif-light"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:hint="@string/banana"
+        android:padding="5dp"
+        android:text="@string/label"
+        android:textAllCaps="true"
+        android:textColor="@color/deep_space_blue"
+        android:textSize="13sp" />
+    <Space
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:id="@+id/cost"
+        android:text="@string/_300_00"
+        android:hint="@string/_300_00"
+        android:textSize="13sp"
+        android:layout_marginEnd="12dp" />
+</LinearLayout>

@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">XpTracks</string>
+    <string name="name">Name</string>
+    <string name="track_with_benj">Track With Benj</string>
+    <string name="xp_tracker">XP Tracker</string>
+    <string name="title">Title</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="price">price</string>
+    <string name="price2">Price</string>
+    <string name="description">Description</string>
+    <string name="add">ADD</string>
+    <string name="total">TOTAL</string>
+    <string name="_00_0">#00.0</string>
+    <string name="_00_00">00.00   </string>
+    <string name="app_logo">App Logo...</string>
+    <string name="_400_00">#400.00</string>
+    <string name="budget">BUDGET</string>
+    <string name="expense">EXPENSE</string>
+    <string name="transactions">transactions</string>
+    <string name="add_new_content">add new content</string>
+    <string name="label">label</string>
+    <string name="banana">banana</string>
+    <string name="_300_00">#300.00</string>
+    <string name="delete_all_transactions">delete all transactions.</string>
+    <string name="backtomain">BackToMain</string>
+</resources>
