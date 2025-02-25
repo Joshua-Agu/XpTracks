@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="meh">#77777777</color>
+
+    <!-- Primary Colors -->
+    <color name="primary">#6200EE</color>
+    <color name="primary_dark">#3700B3</color>
+    <color name="primary_light">#BB86FC</color>
+
+    <!-- Secondary Colors -->
+    <color name="secondary">#03DAC5</color>
+    <color name="secondary_dark">#018786</color>
+    <color name="secondary_light">#66FFF9</color>
+
+        <color name="white_00">#FFFFFF</color>
+        <color name="white_05">#F5F5F5</color>
+        <color name="white_10">#EEEEEE</color>
+        <color name="white_15">#E5E5E5</color>
+        <color name="white_20">#DBDBDB</color>
+        <color name="white_25">#D1D1D1</color>  <color name="white_30">#C7C7C7</color>
+        <color name="white_35">#BCBCBC</color>  <color name="white_40">#B3B3B3</color>
+        <color name="white_45">#AAAAAA</color>  <color name="white_50">#A0A0A0</color>
+        <color name="white_55">#969696</color>  <color name="white_60">#8C8C8C</color>
+        <color name="white_65">#828282</color>  <color name="white_70">#787878</color>
+        <color name="white_75">#6E6E6E</color>  <color name="white_80">#646464</color>
+        <color name="white_85">#5A5A5A</color>  <color name="white_90">#505050</color>
+        <color name="white_95">#464646</color>
+
+    <!-- Accent Colors -->
+    <color name="accent">#FF4081</color>
+    <color name="accent_dark">#C60055</color>
+    <color name="accent_light">#FF80AB</color>
+
+    <!-- Background & Surface -->
+    <color name="background">#F5F5F5</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="error">#B00020</color>
+
+    <!-- Neutral Shades -->
+    <color name="gray">#9E9E9E</color>
+    <color name="gray_dark">#616161</color>
+    <color name="gray_light">#E0E0E0</color>
+
+    <!-- Additional Colors -->
+    <color name="red">#D32F2F</color>
+    <color name="red_light">#FF6659</color>
+    <color name="red_dark">#9A0007</color>
+
+    <color name="blue">#1976D2</color>
+    <color name="blue_light">#63A4FF</color>
+    <color name="blue_dark">#004BA0</color>
+
+    <color name="green">#388E3C</color>
+    <color name="green_light">#66BB6A</color>
+    <color name="green_dark">#00600F</color>
+
+    <color name="yellow">#FBC02D</color>
+    <color name="yellow_light">#FFF176</color>
+    <color name="yellow_dark">#C49000</color>
+
+    <color name="purple">#8E24AA</color>
+    <color name="purple_light">#D05CE3</color>
+    <color name="purple_dark">#5C007A</color>
+</resources>
