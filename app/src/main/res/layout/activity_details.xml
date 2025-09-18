@@ -2,60 +2,77 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".NewTransactionsActivity">
+    android:id="@+id/scrollView"
+    tools:context=".DetailsActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/gradient_bg"
-        android:paddingBottom="24dp"
-        tools:context=".NewTransactionsActivity">
+        android:background="@drawable/detailsbg"
+        android:paddingBottom="16dp">
 
-        <TextView
-            android:id="@+id/topPanel"
-            style="@style/TextAppearance.AppCompat.Body2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/tophead"
-            android:paddingVertical="12dp"
-            android:paddingHorizontal="10dp"
-            android:text="@string/xp_tracker"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            app:drawableEndCompat="@drawable/pin"
-            app:drawableStartCompat="@drawable/pin"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="59dp"
-            android:layout_height="52dp"
-            android:layout_marginTop="24dp"
-            android:contentDescription="@string/app_logo"
-            android:src="@drawable/eclipse"
+        <LinearLayout
+            android:id="@+id/toppanel"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:layout_margin="30dp"
+            android:layout_marginEnd="28dp"
+            android:backgroundTint="@null"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/topPanel" />
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="16dp">
+
+            <TextView
+                android:id="@+id/topPanel"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/tophead"
+                android:padding="10dp"
+                android:text="@string/xp_tracker"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:drawableEndCompat="@drawable/pin"
+                app:drawableStartCompat="@drawable/pin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="59dp"
+                android:layout_height="52dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="32dp"
+
+                android:layout_marginBottom="50dp"
+                android:contentDescription="@string/app_logo"
+                android:src="@drawable/eclipse"
+                app:layout_constraintBottom_toTopOf="@+id/TextLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/topPanel" />
+        </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/TextLayout"
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginTop="24dp"
             android:hint="@string/title"
             app:counterEnabled="true"
@@ -63,17 +80,19 @@
             app:endIconCheckable="true"
             app:endIconContentDescription="Clear text"
             app:endIconMode="clear_text"
-            app:helperTextTextColor="@color/gray"
-            app:hintTextColor="@color/white"
             app:helperText="compulsory*"
-            app:layout_constraintTop_toBottomOf="@id/imageView2"
+            app:hintTextColor="@color/deep_space_blue"
+            app:layout_constraintTop_toBottomOf="@id/toppanel"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/name"
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/clearbackground"
+                android:minHeight="56dp"
+                android:drawableTint="@color/purple_dark"
                 android:drawableStart="@drawable/title"
                 android:drawablePadding="6dp"
                 android:inputType="text"
@@ -90,14 +109,15 @@
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginTop="16dp"
             android:hint="@string/price2"
             app:counterEnabled="true"
             app:counterMaxLength="15"
             app:endIconCheckable="true"
+            app:hintTextColor="@color/deep_space_blue"
             app:endIconMode="clear_text"
-            app:hintTextColor="@color/white"
             app:layout_constraintTop_toBottomOf="@+id/TextLayout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
@@ -105,9 +125,12 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/Price"
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
+                android:layout_height="wrap_content"
+                android:minHeight="56dp"
+                android:background="@drawable/clearbackground"
                 android:drawableStart="@drawable/prices"
                 android:drawablePadding="6dp"
+                android:drawableTint="@color/purple_dark"
                 android:inputType="numberDecimal"
                 android:maxLength="16"
                 android:textSize="12sp"
@@ -116,118 +139,93 @@
                 android:textStyle="bold" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <RadioGroup
-            android:id="@+id/transactionTypeRadioGroup"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            app:layout_constraintTop_toBottomOf="@id/TextLayout2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <RadioButton
-                android:id="@+id/incomeRadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/incomecheck"
-                android:textColor="@color/white"
-                android:buttonTint="@color/white"
-                android:checked="true"/>
-
-            <RadioButton
-                android:id="@+id/expenseRadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/expensecheck"
-                android:textColor="@color/white"
-                android:buttonTint="@color/white"
-                android:layout_marginStart="24dp"/>
-        </RadioGroup>
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/TextLayout3"
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
             android:hint="@string/description"
             app:counterEnabled="true"
             app:counterMaxLength="150"
             app:endIconCheckable="true"
             app:endIconMode="clear_text"
-            app:hintTextColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:hintTextColor="@color/deep_space_blue"
+            app:layout_constraintTop_toBottomOf="@+id/TextLayout2"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/transactionTypeRadioGroup">
+            app:layout_constraintEnd_toEndOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/desc"
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
+                android:layout_height="wrap_content"
+                android:minHeight="56dp"
+                android:maxHeight="100dp"
                 android:drawableStart="@drawable/desc"
                 android:drawablePadding="6dp"
-                android:gravity="top|start"
                 android:inputType="textMultiLine"
+                android:drawableTint="@color/purple_dark"
+                android:background="@drawable/clearbackground"
                 android:lines="3"
                 android:maxLength="151"
+                android:textSize="12sp"
+                android:gravity="top"
                 android:textColor="@color/gray_light"
                 android:textColorHint="@color/black"
-                android:textSize="12sp"
                 android:textStyle="bold" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/Addbutton"
-            android:layout_width="200dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:background="@drawable/tophead"
+            android:layout_marginHorizontal="25dp"
+            android:backgroundTint="@color/deep_space_blue"
+            android:elevation="4dp"
             android:fontFamily="sans-serif"
-            android:paddingHorizontal="30dp"
-            android:paddingVertical="12dp"
-            android:text="@string/add"
-            android:textColor="@color/purple"
-            android:textStyle="bold"
-            app:backgroundTint="@null"
-            app:cornerRadius="50dp"
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="14dp"
+            android:text="@string/update_transactions"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:translationZ="4dp"
+            app:icon="@drawable/butttonclick"
+            app:iconGravity="textEnd"
             app:iconPadding="8dp"
-            app:iconTint="@color/purple"
+            app:iconTint="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/TextLayout3"
-            app:rippleColor="@color/deep_space_blue" />
+            app:rippleColor="@color/purple_light" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
             android:orientation="horizontal"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
             app:layout_constraintTop_toBottomOf="@id/Addbutton"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="1.0"
-            android:paddingVertical="8dp">
-
+            app:layout_constraintVertical_bias="1.0">
             <ImageButton
                 android:id="@+id/back"
+                android:contentDescription="@string/backtomain"
+                app:tint="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="@string/backtomain"
-                android:padding="12dp"
                 android:src="@drawable/back"
-                app:tint="@color/white" />
-
+                android:layout_marginStart="16dp"
+                android:padding="12dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                />
             <Space
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"/>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

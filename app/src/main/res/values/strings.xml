@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">XpTracks</string>
+    <string name="app_name">Eclipse Expenses</string>
     <string name="name">Name</string>
     <string name="track_with_benj">Track With Benj</string>
     <string name="xp_tracker">XP Tracker</string>
@@ -15,8 +15,7 @@
     <string name="_00_00">00.00   </string>
     <string name="app_logo">App Logo...</string>
     <string name="_400_00">#400.00</string>
-    <string name="budget">BUDGET</string>
-    <string name="expense">EXPENSE</string>
+    <string name="budget">budget</string>    <string name="expense">expense</string>
     <string name="transactions">transactions</string>
     <string name="add_new_content">add new content</string>
     <string name="label">label</string>
@@ -24,4 +23,7 @@
     <string name="_300_00">#300.00</string>
     <string name="delete_all_transactions">delete all transactions.</string>
     <string name="backtomain">BackToMain</string>
+    <string name="update_transactions">Update Transactions</string>
+    <string name="incomecheck">Income</string>
+    <string name="expensecheck">Expense</string>
 </resources>

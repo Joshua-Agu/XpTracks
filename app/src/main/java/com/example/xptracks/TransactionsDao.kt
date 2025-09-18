@@ -11,13 +11,15 @@ interface TransactionsDao {
     @Query("SELECT * from transactions")
     fun getAll(): List<Transactions>
 
+    @Query("DELETE FROM transactions")
+    suspend fun deleteAll()
+
     @Insert
-    fun insertAll(vararg transaction: Transactions)
+    suspend fun insertAll(vararg transaction: Transactions)
 
     @Delete
-    fun delete(transaction: Transactions)
+    suspend fun delete(transaction: Transactions)
 
     @Update
-    fun update(vararg transaction: Transactions)
-
+    suspend fun update(vararg transaction: Transactions)
 }
