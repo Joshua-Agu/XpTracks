@@ -1,6 +1,7 @@
 package com.example.xptracks
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Color // Import Color
 import android.view.LayoutInflater
 import android.view.View
@@ -38,8 +39,12 @@ class TransactionAdapter(private var transactions: List<Transactions>) :
             holder.amount?.setTextColor(context?.getColor(R.color.red) ?: Color.BLACK)
         }
 
-        // Use safe call for label
         holder.label?.text = transaction.label
+        holder.itemView.setOnClickListener {
+            val intent = Intent(context, DetailsActivity::class.java)
+            intent.putExtra("transaction", transaction)
+            context?.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {

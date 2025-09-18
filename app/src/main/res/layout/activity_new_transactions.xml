@@ -49,138 +49,147 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/topPanel" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/TextLayout"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginTop="24dp"
-            android:hint="@string/title"
-            app:counterEnabled="true"
-            app:counterMaxLength="22"
-            app:endIconCheckable="true"
-            app:endIconContentDescription="Clear text"
-            app:endIconMode="clear_text"
-            app:helperTextTextColor="@color/gray"
-            app:hintTextColor="@color/white"
-            app:helperText="compulsory*"
-            app:layout_constraintTop_toBottomOf="@id/imageView2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/name"
-                android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:drawableStart="@drawable/title"
-                android:drawablePadding="6dp"
-                android:inputType="text"
-                android:textSize="14sp"
-                android:maxLength="23"
-                android:textColor="@color/white"
-                android:textColorHint="@color/black"
-                android:textStyle="bold" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/TextLayout2"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="16dp"
-            android:hint="@string/price2"
-            app:counterEnabled="true"
-            app:counterMaxLength="15"
-            app:endIconCheckable="true"
-            app:endIconMode="clear_text"
-            app:hintTextColor="@color/white"
-            app:layout_constraintTop_toBottomOf="@+id/TextLayout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/Price"
-                android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:drawableStart="@drawable/prices"
-                android:drawablePadding="6dp"
-                android:inputType="numberDecimal"
-                android:maxLength="16"
-                android:textSize="12sp"
-                android:textColor="@color/gray_light"
-                android:textColorHint="@color/black"
-                android:textStyle="bold" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <RadioGroup
-            android:id="@+id/transactionTypeRadioGroup"
-            android:layout_width="0dp"
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_top_inputs"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            app:layout_constraintTop_toBottomOf="@id/TextLayout2"
+            app:layout_constraintGuide_percent="0.26" />
+
+        <LinearLayout
+            android:id="@+id/inputs_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/clearbackground"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/guideline_top_inputs"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
-            <RadioButton
-                android:id="@+id/incomeRadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/incomecheck"
-                android:textColor="@color/white"
-                android:buttonTint="@color/white"
-                android:checked="true"/>
-
-            <RadioButton
-                android:id="@+id/expenseRadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/expensecheck"
-                android:textColor="@color/white"
-                android:buttonTint="@color/white"
-                android:layout_marginStart="24dp"/>
-        </RadioGroup>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/TextLayout3"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="5dp"
-            android:hint="@string/description"
-            app:counterEnabled="true"
-            app:counterMaxLength="150"
-            app:endIconCheckable="true"
-            app:endIconMode="clear_text"
-            app:hintTextColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/transactionTypeRadioGroup">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/desc"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TextLayout"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:drawableStart="@drawable/desc"
-                android:drawablePadding="6dp"
-                android:gravity="top|start"
-                android:inputType="textMultiLine"
-                android:lines="3"
-                android:maxLength="151"
-                android:textColor="@color/gray_light"
-                android:textColorHint="@color/black"
-                android:textSize="12sp"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                android:hint="@string/title"
+                app:counterEnabled="true"
+                app:counterMaxLength="22"
+                app:endIconCheckable="true"
+                app:endIconContentDescription="Clear text"
+                app:endIconMode="clear_text"
+                app:helperTextTextColor="@color/gray"
+                app:hintTextColor="@color/white"
+                app:helperText="compulsory*">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:drawableStart="@drawable/title"
+                    android:drawablePadding="6dp"
+                    android:inputType="text"
+                    android:textSize="14sp"
+                    android:maxLength="23"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/black"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TextLayout2"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:layout_marginTop="16dp"
+                android:hint="@string/price2"
+                app:counterEnabled="true"
+                app:counterMaxLength="15"
+                app:endIconCheckable="true"
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Price"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:drawableStart="@drawable/prices"
+                    android:drawablePadding="6dp"
+                    android:inputType="numberDecimal"
+                    android:maxLength="16"
+                    android:textSize="12sp"
+                    android:textColor="@color/gray_light"
+                    android:textColorHint="@color/black"
+                    android:textStyle="bold" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RadioGroup
+                android:id="@+id/transactionTypeRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp">
+
+                <RadioButton
+                    android:id="@+id/incomeRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/incomecheck"
+                    android:textColor="@color/white"
+                    android:buttonTint="@color/white"
+                    android:checked="true"/>
+
+                <RadioButton
+                    android:id="@+id/expenseRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/expensecheck"
+                    android:textColor="@color/white"
+                    android:buttonTint="@color/white"
+                    android:layout_marginStart="24dp"/>
+            </RadioGroup>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TextLayout3"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:layout_marginTop="5dp"
+                android:hint="@string/description"
+                app:counterEnabled="true"
+                app:counterMaxLength="150"
+                app:endIconCheckable="true"
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:drawableStart="@drawable/desc"
+                    android:drawablePadding="6dp"
+                    android:gravity="top|start"
+                    android:inputType="textMultiLine"
+                    android:lines="3"
+                    android:maxLength="151"
+                    android:textColor="@color/gray_light"
+                    android:textColorHint="@color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/Addbutton"
@@ -200,13 +209,13 @@
             app:iconTint="@color/purple"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TextLayout3"
+            app:layout_constraintTop_toBottomOf="@+id/inputs_container"
             app:rippleColor="@color/deep_space_blue" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal"
             app:layout_constraintTop_toBottomOf="@id/Addbutton"
             app:layout_constraintBottom_toBottomOf="parent"
