@@ -8,8 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.animation.AnimationUtils
-import kotlin.math.abs // Import abs from kotlin.math
+import kotlin.math.abs
 
 class TransactionAdapter(private var transactions: List<Transactions>) :
     RecyclerView.Adapter<TransactionAdapter.TransactionHolder>() {

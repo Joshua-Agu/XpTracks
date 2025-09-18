@@ -13,6 +13,7 @@ android {
     defaultConfig {
         applicationId = "com.example.xptracks"
         minSdk = 24
+        //noinspection OldTargetApi
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -22,7 +23,7 @@ android {
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments += mapOf(
-                    "room.schemaLocation" to "$projectDir/schemas".toString(),
+                    "room.schemaLocation" to "$projectDir/schemas",
                     "room.incremental" to "true"
                 )
             }

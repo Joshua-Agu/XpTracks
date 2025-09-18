@@ -3,7 +3,6 @@ package com.example.xptracks
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.text.Editable
-import android.text.Layout
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
@@ -56,7 +55,7 @@ class DetailsActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
+        @Suppress("DEPRECATION")
         currentTransaction = intent.getSerializableExtra("transaction") as? Transactions
 
         if (currentTransaction == null) {

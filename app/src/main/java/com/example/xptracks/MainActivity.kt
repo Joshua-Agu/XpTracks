@@ -32,8 +32,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var transactions: MutableList<Transactions>
     private lateinit var transactionAdapter: TransactionAdapter
     private lateinit var linearLayoutManager: LinearLayoutManager
-    private lateinit var AddTransaction: FloatingActionButton
-    private lateinit var ClearTransactions: FloatingActionButton
+    private lateinit var addTransaction: FloatingActionButton
+    private lateinit var clearTransactions: FloatingActionButton
     private lateinit var db : Database
     private lateinit var recyclerView: RecyclerView // Added for easier access
 
@@ -49,9 +49,9 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         transactions = arrayListOf()
-        AddTransaction = findViewById(R.id.AddTransaction)
+        addTransaction = findViewById(R.id.AddTransaction)
         transactionAdapter = TransactionAdapter(transactions)
-        ClearTransactions = findViewById(R.id.clear_transaction_record)
+        clearTransactions = findViewById(R.id.clear_transaction_record)
         linearLayoutManager = LinearLayoutManager(this)
         db = Room.databaseBuilder(this, Database::class.java, "transactions").build()
 
@@ -69,11 +69,11 @@ class MainActivity : AppCompatActivity() {
         }, 100)
 
 
-        AddTransaction.setOnClickListener {
+        addTransaction.setOnClickListener {
             val intent = Intent(this, NewTransactionsActivity::class.java)
             startActivity(intent)
         }
-        ClearTransactions.setOnClickListener {
+        clearTransactions.setOnClickListener {
             if (transactions.isNotEmpty()) {
                 GlobalScope.launch(Dispatchers.IO) {
                     db.transactionDao().deleteAll()
@@ -109,6 +109,7 @@ class MainActivity : AppCompatActivity() {
                     return false
                 }
                 override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                    @Suppress("DEPRECATION")
                     val position = viewHolder.adapterPosition
                     if (position != RecyclerView.NO_POSITION) {
                         val transactionToDelete = transactions[position]
@@ -171,6 +172,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        fetchAll() // This will also trigger the layout animation if items are added
+        fetchAll()
     }
 }
