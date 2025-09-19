@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@drawable/gradient_bg"
         tools:context=".MainActivity">
 
@@ -21,13 +21,16 @@
             android:layout_margin="30dp"
             android:background="@drawable/tophead"
             android:padding="10dp"
-            android:text="@string/xp_tracker"
+            android:text="@string/eclipse_expenses"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:textStyle="bold"
-            app:drawableEndCompat="@drawable/ship1"
-            app:drawableStartCompat="@drawable/ship1"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:drawableEndCompat="@drawable/pin"
+            app:drawableStartCompat="@drawable/pin"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="32dp" />
 
@@ -38,113 +41,163 @@
             android:layout_margin="30dp"
             android:layout_marginTop="48dp"
             android:src="@drawable/eclipse"
+            android:contentDescription="@string/eclipse"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/topPanel" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/TextLayout"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        <LinearLayout
+            android:id="@+id/textFieldsLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:hint="@string/title"
-            app:counterEnabled="true"
-            app:counterMaxLength="22"
-            app:endIconCheckable="true"
-            app:endIconContentDescription="Clear text"
-            app:endIconMode="clear_text"
-            app:helperText="Compulsory*"
-            app:helperTextTextColor="@color/red_dark"
-            app:hintTextColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/clearbackground"
+            android:orientation="vertical"
+            android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imageView2"
-            app:layout_constraintVertical_bias="0.064">
+            app:layout_constraintTop_toBottomOf="@id/imageView2">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/name"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TextLayout"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:drawableStart="@drawable/profile"
-                android:drawablePadding="6dp"
-                android:inputType="text"
-                android:maxLength="23"
-                android:textColor="@color/black"
-                android:textColorHint="@color/black"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="20dp"
+                android:hint="@string/title"
+                app:counterEnabled="true"
+                app:counterMaxLength="22"
+                app:endIconCheckable="true"
+                app:endIconContentDescription="Clear text"
+                app:endIconMode="clear_text"
+                app:helperText="Compulsory*"
+                app:helperTextTextColor="@color/red_dark"
+                app:hintTextColor="@color/black">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:drawableStart="@drawable/title"
+                    android:drawablePadding="6dp"
+                    android:inputType="text"
+                    android:maxLength="23"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textStyle="bold" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/TextLayout2"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:hint="@string/price2"
-            app:counterEnabled="true"
-            app:counterMaxLength="15"
-            app:endIconCheckable="true"
-            app:endIconMode="clear_text"
-            app:hintTextColor="@color/black"
-            app:layout_constraintTop_toBottomOf="@+id/TextLayout">
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/Price"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TextLayout2"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:drawableStart="@drawable/price"
-                android:drawablePadding="6dp"
-                android:inputType="numberDecimal"
-                android:maxLength="16"
-                android:textColor="@color/black"
-                android:textColorHint="@color/black"
-                android:textStyle="bold" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:hint="@string/price2"
+                app:counterEnabled="true"
+                app:counterMaxLength="15"
+                app:endIconCheckable="true"
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/black">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/TextLayout3"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:hint="@string/description"
-            app:counterEnabled="true"
-            app:counterMaxLength="150"
-            app:endIconCheckable="true"
-            app:endIconMode="clear_text"
-            app:hintTextColor="@color/black"
-            app:layout_constraintTop_toBottomOf="@+id/TextLayout2">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Price"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:drawableStart="@drawable/prices"
+                    android:drawablePadding="6dp"
+                    android:inputType="numberDecimal"
+                    android:maxLength="16"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textStyle="bold" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/desc"
+            <RadioGroup
+                android:id="@+id/transactionTypeRadioGroup"
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:drawableStart="@drawable/note"
-                android:drawablePadding="6dp"
-                android:inputType="textAutoCorrect"
-                android:maxLength="151"
-                android:textColor="@color/black"
-                android:textColorHint="@color/black"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:orientation="horizontal">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/incomeRadioButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/incomecheck" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/expenseRadioButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="@string/expensecheck" />
+            </RadioGroup>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TextLayout3"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:hint="@string/description"
+                app:counterEnabled="true"
+                app:counterMaxLength="150"
+                app:endIconCheckable="true"
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/black">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:drawableStart="@drawable/desc"
+                    android:drawablePadding="6dp"
+                    android:inputType="textAutoCorrect"
+                    android:maxLength="151"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
         <Button
             android:id="@+id/button"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/tophead"
+            app:backgroundTint="@color/surface"
+            android:textColor="@color/dark_surface"
             android:text="@string/add"
             android:textAlignment="center"
+            android:layout_marginHorizontal="50dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TextLayout3" />
+            app:layout_constraintTop_toBottomOf="@+id/textFieldsLayout" />
 
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/back_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</LinearLayout>

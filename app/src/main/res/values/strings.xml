@@ -26,4 +26,7 @@
     <string name="update_transactions">Update Transactions</string>
     <string name="incomecheck">Income</string>
     <string name="expensecheck">Expense</string>
+    <string name="eclipse">eclipse</string>
+    <string name="back_button">back_button</string>
+    <string name="eclipse_expenses">Eclipse Expenses</string>
 </resources>

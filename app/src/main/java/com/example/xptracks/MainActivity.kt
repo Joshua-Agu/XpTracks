@@ -168,8 +168,6 @@ class MainActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.expenseValue).text = "₦ %.2f".format(kotlin.math.abs(rawExpenseAmount))
     }
 
-
-
     override fun onResume() {
         super.onResume()
         fetchAll()

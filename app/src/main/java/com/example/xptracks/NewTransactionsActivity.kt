@@ -51,7 +51,6 @@ class NewTransactionsActivity : AppCompatActivity() {
                 priceEditText.error = "Please enter a valid amount"
                 return@setOnClickListener
             } else {
-                // Check selected RadioButton
                 val selectedTypeId = transactionTypeRadioGroup.checkedRadioButtonId
                 if (selectedTypeId == R.id.expenseRadioButton) {
                     if (amount > 0) {
